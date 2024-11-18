@@ -33,6 +33,7 @@ python -c "from app import create_tables; create_tables()"
 ###**Folder Structure**
 
 flask-chatroom/
+
 ├── app.py              # Main application file
 ├── requirements.txt    # Python dependencies
 ├── templates/          # HTML templates
