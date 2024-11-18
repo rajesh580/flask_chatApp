@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatroom Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #0000ff, #87cefa, #ffffff);
+        }
+        h1 {
+            font-style: Monaco;
+            text-shadow: 5px;
+            color: black;
+            display:  block;
+            font-size: 2rem;
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid black;
+            animation: typing 4s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto p-8">
+        <h1 class="text-3xl font-bold mb-8">Welcome to Chatroom</h1>
+        {% if username %}
+            <div class="space-y-4">
+                <p class="text-lg">Welcome, {{ username }}!</p>
+                <div class="space-x-4">
+                    <a href="{{ url_for('create_room') }}" class="bg-blue-500 text-white px-4 py-2 rounded">Create Room</a>
+                    <a href="{{ url_for('join_room_page') }}" class="bg-green-500 text-white px-4 py-2 rounded">Join Room</a>
+                </div>
+            </div>
+        {% else %}
+            <div class="space-x-4">
+                <a href="{{ url_for('login') }}" class="bg-blue-500 text-white px-4 py-2 rounded">Login</a>
+                <a href="{{ url_for('signup') }}" class="bg-green-500 text-white px-4 py-2 rounded">Sign Up</a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

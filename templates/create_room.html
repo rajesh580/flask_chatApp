@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Room</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #0000ff, #87cefa, #ffffff);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto p-8">
+        <h1 class="text-3xl font-bold mb-8">Create Room</h1>
+        <form method="POST" class="max-w-md space-y-4">
+            <div>
+                <label class="block">Room Name:</label>
+                <input type="text" name="room_name" required class="w-full p-2 border rounded">
+            </div>
+            <div>
+                <label class="block">Room PIN:</label>
+                <input type="password" name="room_pin" required class="w-full p-2 border rounded">
+            </div>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Create Room</button>
+        </form>
+    </div>
+</body>
+</html>

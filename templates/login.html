@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body{
+            background: linear-gradient(to bottom, #0000ff, #87cefa, #ffffff);
+           
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto p-8">
+        <h1 class="text-3xl font-bold mb-8">Login</h1>
+        <form method="POST" class="max-w-md space-y-4">
+            <div>
+                <label class="block">Username:</label>
+                <input type="text" name="username" required class="w-full p-2 border rounded">
+            </div>
+            <div>
+                <label class="block">Password:</label>
+                <input type="password" name="password" required class="w-full p-2 border rounded">
+            </div>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Login</button>
+            <br><a href="{{ url_for('signup') }}">Don't have an account? Sign up here.</a>
+
+        </form>
+    </div>
+</body>
+</html>
