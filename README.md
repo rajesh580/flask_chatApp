@@ -31,7 +31,6 @@ python -c "from app import create_tables; create_tables()"
 **Access the Application: Open a browser and navigate to http://localhost:5000.**
 
 ###**Folder Structure**
-
 flask-chatroom/
 
 ├── app.py              # Main application file
@@ -41,3 +40,8 @@ flask-chatroom/
 ├── uploads/            # Directory for file uploads
 ├── chatroom.db         # SQLite database (auto-created)
 └── README.md           # Documentation
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/rajesh580/flask_chatApp
+   cd flask_chatApp
