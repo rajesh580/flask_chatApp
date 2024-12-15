@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_socketio import SocketIO, join_room, leave_room, emit
+from flask import send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
@@ -241,6 +242,13 @@ def handle_file(data):
         'file': filename,
         'created_at': message.created_at.strftime('%Y-%m-%d %H:%M:%S')
     }, room=room_name)
+
+@app.route('/uploads/<filename>')
+def download_file(filename):
+    file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    if not os.path.exists(file_path):
+        return "File not found", 404
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 # Create database tables
 def create_tables():
