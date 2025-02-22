@@ -7,8 +7,10 @@ from werkzeug.utils import secure_filename
 from datetime import datetime
 import os
 import secrets
+import eventlet
 
 app = Flask(__name__)
+socketio = SocketIO(app, async_mode='eventlet')
 app.config['SECRET_KEY'] = secrets.token_hex(16)
 app.config['UPLOAD_FOLDER'] = 'uploads'
 # For SQLite
